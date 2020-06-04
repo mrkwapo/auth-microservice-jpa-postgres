@@ -3,14 +3,19 @@ package com.dracodess.springsecurityjpa.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "User", schema="public")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private int id;
+    @Column(name="userName", nullable = true)
     private String userName;
+    @Column(name="password", nullable = true)
     private String password;
+    @Column(name="active", nullable = true)
     private boolean active;
+    @Column(name="roles", nullable = true)
     private String roles;
 
     public int getId() {
